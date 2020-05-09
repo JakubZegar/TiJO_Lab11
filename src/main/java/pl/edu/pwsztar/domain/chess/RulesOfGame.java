@@ -5,11 +5,6 @@ import org.springframework.stereotype.Component;
 
 public interface RulesOfGame {
 
-    /**
-     * Metoda zwraca true, tylko gdy przejscie z polozenia
-     * (xStart, yStart) na (xEnd, yEnd) w jednym ruchu jest zgodne
-     * z zasadami gry w szachy
-     */
     boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd);
 
     @Component
@@ -32,8 +27,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return xStart == xEnd || yStart == yEnd;
         }
     }
 
@@ -43,8 +37,8 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return (Math.abs(xStart - xEnd) == 2 && Math.abs(yStart - yEnd) == 1) ||
+                    (Math.abs(yStart - yEnd) == 2 && Math.abs(xStart - xEnd) == 1);
         }
     }
 
@@ -54,8 +48,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return (Math.abs(xStart - xEnd) == 0 && (Math.abs(yStart - yEnd) == 1)) ||
+                    (Math.abs(xStart - xEnd) == 1 && (Math.abs(yStart - yEnd) == 1)) ||
+                    (Math.abs(xStart - xEnd) == 1 && (Math.abs(yStart - yEnd) == 0));
         }
     }
 
@@ -65,8 +60,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            return (Math.abs(xEnd - xStart) == Math.abs(yEnd - yStart)) || (xStart == xEnd || yStart == yEnd);
         }
     }
 
@@ -76,12 +70,10 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if( yStart == 2 && xStart == xEnd && yEnd - yStart <= 2 && yEnd - yStart != 0  ){
+                return true;
+            } else return yStart != 2 && (xStart == xEnd && yEnd - yStart == 1);
+
         }
     }
-
-    // TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rock, Pawn
-    // TODO: Prosze stosowac zaproponowane nazwy klas !!! (Prowadzacy zajecia posiada wlasne testy)
-    // TODO: Kazda klasa powinna implementowac interfejs RulesOfGame
 }

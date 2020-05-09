@@ -22,6 +22,7 @@ class PawnTest {
             " 1,  1,  1,  2",
             " 5,  5,  5,  6",
             " 8,  2,  8,  4",
+            "2,2,2,3",
     })
     void checkCorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop) {
         assertTrue(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
@@ -34,7 +35,7 @@ class PawnTest {
             "7, 5, 7, 4",
             "7, 8, 5, 2",
             "1, 3, 2, 3",
-
+            "2,2,2,2",
     })
     void checkIncorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
