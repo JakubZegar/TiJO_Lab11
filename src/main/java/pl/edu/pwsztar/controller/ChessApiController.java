@@ -28,10 +28,8 @@ public class ChessApiController {
     @CrossOrigin
     @PostMapping(value = "/chess/is-correct-move")
     public ResponseEntity<Boolean> isCorrectMove(@RequestBody FigureMoveDto figureMoveDto) {
-        LOGGER.info("*** move details : {}", figureMoveDto, chessService.isCorrectMove(figureMoveDto));
+        LOGGER.info("*** move details : {}", figureMoveDto);
 
-        // TODO: true = ruch dozwolony (figura moze przemiescic sie z punktu start do punktu destination)
-        // TODO: false = ruch zabroniony (figura nie moze przemiescic sie z punktu start do punktu destination)
         return ResponseEntity.ok(chessService.isCorrectMove(figureMoveDto));
     }
 }

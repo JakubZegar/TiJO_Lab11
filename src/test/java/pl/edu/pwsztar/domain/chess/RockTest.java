@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-class RookTest {
+class RockTest {
 
-        private RulesOfGame rook = new RulesOfGame.Rook();
+        private RulesOfGame rock = new RulesOfGame.Rock();
 
         @Tag("Rook")
         @ParameterizedTest
@@ -20,8 +20,8 @@ class RookTest {
                 " 4,  2,  4,  8 ",
                 " 1,  3,  1,  0 "
         })
-        void checkCorrectMoveForRook(int xStart, int yStart, int xStop, int yStop) {
-            assertTrue(rook.isCorrectMove(xStart, yStart, xStop, yStop));
+        void checkCorrectMoveForRock(int xStart, int yStart, int xStop, int yStop) {
+            assertTrue(rock.isCorrectMove(xStart, yStart, xStop, yStop));
         }
 
         @ParameterizedTest
@@ -31,8 +31,8 @@ class RookTest {
                 "8, 5, 6, 3",
                 "5, 7, 6, 2"
         })
-        void checkIncorrectMoveForRook(int xStart, int yStart, int xStop, int yStop) {
-            assertFalse(rook.isCorrectMove(xStart, yStart, xStop, yStop));
+        void checkIncorrectMoveForRock(int xStart, int yStart, int xStop, int yStop) {
+            assertFalse(rock.isCorrectMove(xStart, yStart, xStop, yStop));
         }
 }
 

@@ -22,8 +22,8 @@ public interface RulesOfGame {
     }
 
     @Component
-    @Qualifier("Rook")
-    class Rook implements RulesOfGame {
+    @Qualifier("Rock")
+    class Rock implements RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
@@ -70,10 +70,10 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            if( yStart == 2 && xStart == xEnd && yEnd - yStart <= 2 && yEnd - yStart != 0  ){
+            System.out.println(yStart);
+            if( yStart == 50 && xStart == xEnd &&  (Math.abs(yEnd - yStart)) != 0  ){
                 return true;
-            } else return yStart != 2 && (xStart == xEnd && yEnd - yStart == 1);
-
+            } else return yStart != 50 && (xStart == xEnd && yEnd - yStart == 1);
         }
     }
 }
