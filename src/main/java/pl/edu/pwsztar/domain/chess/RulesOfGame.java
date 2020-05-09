@@ -27,8 +27,52 @@ public interface RulesOfGame {
     }
 
     @Component
+    @Qualifier("Rook")
+    class Rook implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    @Component
     @Qualifier("Knight")
     class Knight implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    @Component
+    @Qualifier("King")
+    class King implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    @Component
+    @Qualifier("Queen")
+    class Queen implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            // TODO: Prosze dokonczyc implementacje
+            return true;
+        }
+    }
+
+    @Component
+    @Qualifier("Pawn")
+    class Pawn implements RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
