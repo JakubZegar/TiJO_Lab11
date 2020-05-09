@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 class KingTest {
 
     private RulesOfGame king = new RulesOfGame.King();
@@ -35,7 +34,6 @@ class KingTest {
             "5, 6, 2, 5",
             "5, 1, 8, 1",
             "3, 8, 3, 8",
-
     })
     void checkIncorrectMoveForKing(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(king.isCorrectMove(xStart, yStart, xStop, yStop));

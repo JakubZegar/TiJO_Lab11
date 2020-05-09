@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 class PawnTest {
 
     private RulesOfGame pawn = new RulesOfGame.Pawn();

@@ -34,7 +34,6 @@ class QueenTest {
             "1, 5, 4, 8",
             "5, 7, 6, 2",
             "1,1,1,1",
-
     })
     void checkIncorrectMoveForQueen(int xStart, int yStart, int xStop, int yStop) {
         assertFalse(queen.isCorrectMove(xStart, yStart, xStop, yStop));

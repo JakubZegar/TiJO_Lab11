@@ -16,7 +16,6 @@ public interface RulesOfGame {
             if(xStart == xEnd && yStart == yEnd) {
                 return false;
             }
-
             return Math.abs(xEnd - xStart) == Math.abs(yEnd - yStart);
         }
     }
