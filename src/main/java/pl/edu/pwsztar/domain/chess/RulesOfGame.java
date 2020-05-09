@@ -71,9 +71,9 @@ public interface RulesOfGame {
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
             System.out.println(yStart);
-            if( yStart == 50 && xStart == xEnd &&  (Math.abs(yEnd - yStart)) != 0  ){
+            if( yStart == 2 && xStart == xEnd &&  (Math.abs(yEnd - yStart)) != 0  ){
                 return true;
-            } else return yStart != 50 && (xStart == xEnd && yEnd - yStart == 1);
+            } else return yStart != 2 && (xStart == xEnd && yEnd - yStart == 1);
         }
     }
 }

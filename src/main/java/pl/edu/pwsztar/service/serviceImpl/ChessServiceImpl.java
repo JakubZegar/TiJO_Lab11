@@ -36,10 +36,10 @@ public class ChessServiceImpl implements ChessService {
     @Override
     public boolean isCorrectMove(FigureMoveDto figureMoveDto) {
         FigureType figureType = figureMoveDto.getType();
-        char startX = figureMoveDto.getStart().charAt(0);
-        char startY = figureMoveDto.getStart().charAt(2);
-        char endX = figureMoveDto.getDestination().charAt(0);
-        char endY = figureMoveDto.getDestination().charAt(2);
+        int startX = Character.getNumericValue(figureMoveDto.getStart().charAt(0));
+        int startY = Character.getNumericValue(figureMoveDto.getStart().charAt(2));
+        int endX = Character.getNumericValue(figureMoveDto.getDestination().charAt(0));
+        int endY = Character.getNumericValue(figureMoveDto.getDestination().charAt(2));
 
         switch (figureType){
             case KING:
